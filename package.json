@@ -1,0 +1,15 @@
+{
+  "name": "mod-pi-talker",
+  "version": "1.0.0",
+  "description": "modular pi talker, third iteration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/kagos/mod-pi-talker"
+  },
+  "author": "kagos",
+  "license": "ISC"
+}
