@@ -1,0 +1,77 @@
+/** IMPORTS **/
+@import '../vendor/normalize-less/normalize.less';
+@import '../vendor/bootstrap/less/bootstrap.less';
+
+/** VARIABLES **/
+@color-font: #575757;
+@color-main:
+@font-size-h1: 36px;
+@font-size-h2: 18px;
+@font-weight-reg: 400 !important;
+@font-weight-bold: 700 !important;
+
+/** MIXINS **/
+.font-default() {
+  font-style: normal;
+  font-weight: @font-weight-reg;
+  color: @color-font;
+}
+
+/** Variables **/
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,0.5)) {
+  -webkit-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+body {
+  .font-default();
+  margin: 20px 0;
+
+  .panel-heading,
+  button {
+    font-weight: @font-weight-bold;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  button {
+    .box-shadow;
+
+    i {
+      color: #ffffff;
+    }
+  }
+
+  ul {
+    color: #666666;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      display: flex;
+
+      i {
+        font-size: 30px;
+        padding-right: 10px;
+        width: auto;
+
+        &.fa-dot-circle-o {
+          color: #999999;
+        }
+
+        &.fa-circle {
+          color: #EAEAEA;
+        }
+
+        &.icon-alert {
+          color: #ff0000 !important;
+        }
+      }
+
+      label {
+        font-weight: bold;
+        margin: auto auto auto 0;
+      }
+    }
+  }
+}

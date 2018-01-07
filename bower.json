@@ -1,0 +1,27 @@
+{
+  "name": "pi-talker",
+  "description": "Raspberry Pi, Python, NodeJS",
+  "main": "index.js",
+  "authors": [
+    "kagos"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "normalize-less": "*",
+    "font-awesome": "^4.6.3"
+  },
+  "resolutions": {
+    "jquery": "1.9.1 - 2"
+  }
+}

@@ -1,0 +1,5 @@
+/node_modules/*
+*.log
+/web-app/vendor/*
+/web-app/build/*
+/preview-img/*.jpg
