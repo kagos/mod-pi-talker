@@ -16,17 +16,10 @@
     <script>
       'use strict';
 
+      let utilities = [];
       const ajaxErr = (res) => console.warn('There was an error connecting to the Server: \n' + res);
+
       const pageSetup = {
-        getUtilities: () => {
-          $.ajax({
-            url: "/utilities",
-            dataType: "json"
-          }).done((utilities) => {
-              pageSetup.createDisplay(utilities);
-            }
-          );
-        },
         createDisplay: (utilities) => {
           const _utilities = utilities || [];
           let rowTemplate = 
@@ -41,6 +34,28 @@
                                   .replace("{{value}}", _util.state);
             $("#displayContainer").append(formattedUtil);
           }); 
+        },
+        getUtilities: () => {
+          $.ajax({
+            url: "/utilities",
+            dataType: "json"
+          }).done((utilities) => {
+              pageSetup.setUtilities(utilities);
+              pageSetup.createDisplay(utilities);
+            }
+          );
+        },
+        setUtilities: (_utilities) => {
+          utilities = _utilities;
+        },
+        triggerManualRefreshAll: () => {
+
+        },
+        triggerManualRefreshSingle: (utility) => {
+
+        },
+        updateDisplay: (utility) => {
+
         }
       }
       $(function() {
