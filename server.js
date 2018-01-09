@@ -18,6 +18,25 @@ const runPyScript = (obj, resp) => {
   });
 };
 
+const getState = (port, resp) => {
+  return true;
+}
+
+const _utils = [
+  {
+    pin: 0,
+    type: "switch",
+    name: "Light 1",
+    state: getState()
+  },
+  {
+    pin: 1,
+    type: "switch",
+    name: "Light 2",
+    state: getState()
+  }
+];
+
 
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
@@ -27,11 +46,11 @@ app.use(express.static(__dirname + '/web-app'));
 
 app.get('/', (request, response) => {
 
-  response.sendfile('web-app/index.html');  
+  response.sendfile('web-app/index.html');
 
 }).get('/utilities', (request, response) => {
 
-  console.log("Got utilities");
+  response.send(JSON.stringify(_utils));
 
 }).get('/utilities/:uid', (request, response) => {
 
